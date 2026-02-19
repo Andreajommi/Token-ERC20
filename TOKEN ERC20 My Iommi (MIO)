@@ -9,7 +9,9 @@ contract MyIommi is ERC20, Ownable {
     constructor(address initialOwner)
         ERC20("MyIommi", "MIO")
         Ownable(initialOwner)
-    {}
+    { mint(msg.sender, 100 * (10 ** 18));
+
+    }
 
     function mint(address to, uint256 amount) public onlyOwner {
         _mint(to, amount);
